@@ -71,9 +71,188 @@
 //     console.log("key:", key, "value:", student[key]);
 // }
 
-let gameNum = 25;
-let userNum = prompt("Guess the game number : ");
-while (userNum != gameNum) {
-    userNum = prompt ("you entered wrong number. Guess again : ");
-}
-console.log("congratulation, you entered the right number");
+// let gameNum = 25;
+// let userNum = prompt("Guess the game number : ");
+// while (userNum != gameNum) {
+//     userNum = prompt ("you entered wrong number. Guess again : ");
+// }
+// console.log("congratulation, you entered the right number");
+
+
+
+
+// strings
+// strings  is a sequence of characters used to represent text
+// create string
+// let str = "akr";
+
+
+// let num = [1,2,3,4,5,6,7];
+// for(let i = 0; i <num.length; i++){
+//     let
+// }
+// Create an array from 1 to 7
+// let num = [1,2,3,4,5,6,7];
+// console.log("numbers:", num);
+
+// let numbers = 3;
+
+// for(let i = 1; i <= 7; i++){
+//         console.log("i =", i);
+//     }
+
+// let size = Math.ceil(num.length / numbers);
+//     console.log("Divided Arrays:",size);
+
+// let divid = [];
+// for (let i = 0; i < num.length; i += size) {
+//     divid.push(num.slice(i, i + size));
+// }
+
+
+
+
+
+// uses of Arrays
+// push():add to end
+// Pop(): delete from end and return
+// toString(): convert array to strings
+// concat(); to joins multiple arrays Result
+// unshift():add to Start
+// shift():delete from start and return
+// slice():returns a pice of the arrays
+// splice(): change original array (add , remove, replace)
+
+
+
+
+// Create an array from 1 to 7
+// let num = Array.from({ length: 7 }, (__, i) => i + 1);
+// console.log("num:", num);
+// let number = 3;
+// let size = Math.ceil(num.length / number);
+// // console.log("numberss",size)
+// let Divide = [];
+// for (let i = 0; i < num.length; i += size) {
+//     Divide.push(num.slice(i, i + size));
+// }
+// console.log("Divided Array:", Divide);
+// console.log("slice number ", num.slice(1, 5));
+
+
+
+// const fruits = ["apple", "banana", "cherry"];
+// for (let i = 0; i < fruits.length; i++) {
+//     console.log(fruits[i]);
+// }
+
+
+// const functionName = () =>{
+
+// }
+
+
+// Divide.forEach((num, index) => {
+//     console.log(`Array ${index}:`, num);
+// });
+
+// let nums = Array.from({length: 41}, (___, n) =>n + 1)
+// let numbers = 4;
+// let sizes = Math.ceil(nums.length/numbers);
+// let dev = [];
+// for(let n = 0; n<nums.length; n += sizes){
+//     dev.push(nums.slice(n, n + sizes));
+// }
+// console.log("dev:",dev)
+
+
+// // let akr = Array.from({length:7},(__,i) =>i + 1);
+// let akr =[1,2,3,4,5,6,7];
+// console.log("akr",akr);
+
+
+
+
+// function in js 
+// block of code that performs a spicific task, can be invocked whenever needed
+
+// function definition
+// function functionName(){ => (abc, xyz)=>parameter=>input
+//    write your code
+// redandancy=>repeat 
+// }
+// function call 
+// functionName("if we call the abc then its callad argument"):
+
+// arrow function => modrn js
+// compact way of writing a function 
+// const functionName = (a,b) =>{
+//     return a+b;
+// }
+
+// const countV = (str) => {
+//     let count = 0;
+//     for (const char of str) {
+//         if (
+//             char === "a" ||
+//             char === "e" ||
+//             char === "i" ||
+//             char === "o" ||
+//             char === "u"
+//             ) {
+//                 count++;
+//               }
+//     } 
+//     return count;
+// }
+
+
+
+
+
+// foreach loop in arrays / also called higher order function/methods
+// callbackfunction : here, its a function to execute for element in the array
+
+// a callback is a function passed as an argument to another function.
+//  array.forEach((element) => {
+//     console.log(element);
+//  });
+
+
+// let arr = [1,2,3,4,5,6];
+// arr.forEach(function print(val){  // value at each indx
+//     console.log(val)
+// })
+
+
+// let arrow = ["akr","hassan","maaz"]
+// arrow.forEach((val, indx, array)=>{
+//     console.log("arrow",val.toUpperCase(), indx,array);
+// })
+
+
+// let num = [2,3,4,5,6,7];
+// num.forEach((num)=>{
+//     console.log(num * num);
+// });
+
+// 2nd methods
+// let num = [4,4,5,6,7,8,9,77];
+// let calcSqire = (num)=>{
+//     console.log(num*num);
+// }
+// num.forEach(calcSqire);
+
+// some more array methods
+// Map
+// creates a new array with the results of some speration, the value its callback returns are used to form now array
+// Array.map(callbackfnx(value, index, array))
+
+// let num = [1,2,3,4,5,6,7,8,56,45];
+// let newArr = num.map((val)=>{
+//     return val * 6;
+// })
+// console.log(newArr)
+
+
+
