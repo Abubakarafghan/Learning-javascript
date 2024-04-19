@@ -16,8 +16,6 @@
 // }
 // console.log("YOUR GRADE IS EQULE TO:",grade)
 
-
-
 // loops in for loop
 // for loop
 // for (let i = 1; i <=3; i++ ){
@@ -28,7 +26,7 @@
 // let sum = 0;
 // let n = 15
 // for (let i = 1; i <= n; i++){
-//     sum = sum + i; 
+//     sum = sum + i;
 // }
 // console.log ("sum",sum)
 
@@ -78,14 +76,10 @@
 // }
 // console.log("congratulation, you entered the right number");
 
-
-
-
 // strings
 // strings  is a sequence of characters used to represent text
 // create string
 // let str = "akr";
-
 
 // let num = [1,2,3,4,5,6,7];
 // for(let i = 0; i <num.length; i++){
@@ -109,10 +103,6 @@
 //     divid.push(num.slice(i, i + size));
 // }
 
-
-
-
-
 // uses of Arrays
 // push():add to end
 // Pop(): delete from end and return
@@ -122,9 +112,6 @@
 // shift():delete from start and return
 // slice():returns a pice of the arrays
 // splice(): change original array (add , remove, replace)
-
-
-
 
 // Create an array from 1 to 7
 // let num = Array.from({ length: 7 }, (__, i) => i + 1);
@@ -139,18 +126,14 @@
 // console.log("Divided Array:", Divide);
 // console.log("slice number ", num.slice(1, 5));
 
-
-
 // const fruits = ["apple", "banana", "cherry"];
 // for (let i = 0; i < fruits.length; i++) {
 //     console.log(fruits[i]);
 // }
 
-
 // const functionName = () =>{
 
 // }
-
 
 // Divide.forEach((num, index) => {
 //     console.log(`Array ${index}:`, num);
@@ -165,27 +148,23 @@
 // }
 // console.log("dev:",dev)
 
-
 // // let akr = Array.from({length:7},(__,i) =>i + 1);
 // let akr =[1,2,3,4,5,6,7];
 // console.log("akr",akr);
 
-
-
-
-// function in js 
+// function in js
 // block of code that performs a spicific task, can be invocked whenever needed
 
 // function definition
 // function functionName(){ => (abc, xyz)=>parameter=>input
 //    write your code
-// redandancy=>repeat 
+// redandancy=>repeat
 // }
-// function call 
+// function call
 // functionName("if we call the abc then its callad argument"):
 
 // arrow function => modrn js
-// compact way of writing a function 
+// compact way of writing a function
 // const functionName = (a,b) =>{
 //     return a+b;
 // }
@@ -202,13 +181,9 @@
 //             ) {
 //                 count++;
 //               }
-//     } 
+//     }
 //     return count;
 // }
-
-
-
-
 
 // foreach loop in arrays / also called higher order function/methods
 // callbackfunction : here, its a function to execute for element in the array
@@ -218,18 +193,15 @@
 //     console.log(element);
 //  });
 
-
 // let arr = [1,2,3,4,5,6];
 // arr.forEach(function print(val){  // value at each indx
 //     console.log(val)
 // })
 
-
 // let arrow = ["akr","hassan","maaz"]
 // arrow.forEach((val, indx, array)=>{
 //     console.log("arrow",val.toUpperCase(), indx,array);
 // })
-
 
 // let num = [2,3,4,5,6,7];
 // num.forEach((num)=>{
@@ -255,4 +227,99 @@
 // console.log(newArr)
 
 
+
+//  countVowels
+// function countVowels(str) {
+//   let count = 0;
+//   for (const char of str) {
+//     if (char === "a" || char === "e" || char === "i" || char === "o") 
+//     {
+//       count++;
+//     }
+//   }
+//   console.log(count);
+// }
+
+
+// forEach loops in arrays
+
+// array.forEach(callbackfunction)
+
+// let arra= [1,1,1,1,23,234,234,3432,432];
+// let a = ["str", "pak", ];
+
+// arra.forEach((valp , indx , arr) => {
+//     console.log(valp, arr, indx)
+    
+// });
+
+// a.forEach(a => {
+//     console.log(a.toUpperCase())
+
+// });
+
+
+// Map methord array but this alittle change this make a new array 
+// its like foreach this more using for collection 
+// let num = [12, 21,2]
+// num.map((val) => {
+//     console.log(val)
+// });
+
+// let newArr = num.map((value) => {
+//     return value * 5;
+// });
+
+// console.log("numis", newArr)
+
+
+// filter methord
+
+// let values = [ 1,1,23,4,5,6,7,6,5,4,44,33,44,55,];
+// let evenarray = values.filter((ok) => {
+//     return ok % 2 === 0;
+// }) 
+
+// console.log(evenarray);
+
+
+
+// reduce mathord
+// let arr = [1,3,4,5,6 ,100]
+// const newvalue = arr.reduce((prev, current) =>{
+//     return prev > current ? prev : current; //agr hara prev current is bara to ? prev return kar do (nhi to) : current return kardo 
+// }) 
+// console.log(newvalue)
+
+
+
+
+// solve questions
+// let marks = [80,90,91,50];
+// let topers = marks.filter((write_a_name_you_want)=>{//filter works like filter we used in hahahaa
+//     return write_a_name_you_want >= 90;
+// })
+// console.log("topers",topers)
+
+// let n = prompt("enter a number");
+// let arr = [];
+// for (let i=1; i<=n; i++){
+//     arr[i-1]=i;
+// }
+// console.log(arr);
+
+// // add the above Number by reduce mathord
+
+// let sum = arr.reduce((result, current)=>{
+//     return result + current;
+// })
+// console.log("sum",sum)
+
+// // multiplication
+// let mul = arr.reduce((res, current)=>{
+//     return res * current;
+// })
+// console.log("multiple",mul);
+
+// new topic is dom part 1
 
