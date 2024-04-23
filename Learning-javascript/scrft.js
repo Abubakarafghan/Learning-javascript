@@ -321,5 +321,13 @@
 // })
 // console.log("multiple",mul);
 
-// new topic is dom part 1
 
+
+
+// new topic is dom part 1
+// when the a web page is loded the broswer create document object model (dom) of the page
+
+
+
+
+console.log("salam")
