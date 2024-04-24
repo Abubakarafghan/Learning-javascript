@@ -330,4 +330,12 @@
 
 
 
-console.log("salam")
+// console.log("salam")
+// let heading = document.getElementById("heading");
+// console.log(heading);
+
+// let element = document.querySelector("p"); //1st element
+// console.dir(element);
+
+// let all = document.querySelectorAll("p"); //all element
+// console.dir(all);
