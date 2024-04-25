@@ -344,4 +344,4 @@
 // console.log(button)
 
 let akr = document.querySelector("div");
-console.dir(akr)
+console.dir(akr)//innertext , innerhtml , (innercontent , this show the hidden text in the tag)
