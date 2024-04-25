@@ -18,21 +18,20 @@ document.getElementById("myId")
 ```
 ## selecting with class
 here you can see your abject by classname
-``` 
+``` json
 document.getElementsByClassName("MyClass")
- ```json
+ ```
 
  ## selecting with tag
  by this you can see that what is inside in the html tags
-```
-document.getElementsByTagName("TagName")
 ```json
+document.getElementsByTagName("TagName")
+```
 
 ## Query Selector
-```
+```json
 document.querySelector("#id/.myclass/tag")
 
-```json
 let element = document.querySelector("p"); //1st element
 console.dir(element);
 
@@ -42,5 +41,5 @@ console.dir(all);
 ```
    
 
-### the above is different method by which we can access our element in browser 
+### the above some different methods by which we can access our element in browser console
  

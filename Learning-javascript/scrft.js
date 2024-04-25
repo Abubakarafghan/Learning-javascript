@@ -339,3 +339,9 @@
 
 // let all = document.querySelectorAll("p"); //all element
 // console.dir(all);
+
+// let button = document.querySelector(".btn");
+// console.log(button)
+
+let akr = document.querySelector("div");
+console.dir(akr)
