@@ -343,5 +343,28 @@
 // let button = document.querySelector(".btn");
 // console.log(button)
 
-let akr = document.querySelector("div");
-console.dir(akr)//innertext , innerhtml , (innercontent , this show the hidden text in the tag)
+// let div = document.querySelector("div");
+// console.log(div);//innertext , innerhtml , (innercontent , this show the hidden text in the tag)
+
+// let para = document.querySelector("p")
+// console.log(para.getAttribute("class"))// here we get the class name 
+
+// let para = document.querySelector("p")
+// console.log(para.setAttribute("class", "kaka"))//here we change the class name  
+
+// let para = document.querySelector("div");
+// console.log(para.style) // here i can see all the styles which i used in the my project
+// para.style.backgroundColor = ("blue") // here i used style by which we can add or change style
+// para.style.fontFamily = ("arial")
+// para.style.textAlign = ("center")
+// // para.innerText =s ""; // we can also change the value
+// // we are able to used all the properties (html) here 
+
+
+
+let btn = document.createElement("button")
+btn.innerText = "click me"
+console.dir(btn);
+
+let akr = document.querySelector("div")
+akr.prepend(btn);// after, before,prepand, append
