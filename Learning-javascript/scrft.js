@@ -368,3 +368,6 @@ console.dir(btn);
 
 let akr = document.querySelector("div")
 akr.prepend(btn);// after, before,prepand, append
+
+
+// //btn.remove()//we can remove any element 
