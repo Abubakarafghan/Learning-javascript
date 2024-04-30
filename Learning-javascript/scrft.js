@@ -362,12 +362,22 @@
 
 
 
-let btn = document.createElement("button")
-btn.innerText = "click me"
-console.dir(btn);
+// let btn = document.createElement("button")
+// btn.innerText = "click me"
+// console.dir(btn);
 
-let akr = document.querySelector("div")
-akr.prepend(btn);// after, before,prepand, append
+// let akr = document.querySelector("div")
+// akr.prepend(btn);// after, before,prepand, append
 
 
-// //btn.remove()//we can remove any element 
+// // //btn.remove()//we can remove any element 
+
+// let color = document.querySelector("div")
+
+// color.classList.add("pak")//(if you want to remve then (remove)) by this you can able to add the another calass to div or para
+
+
+
+
+
+// events in js 

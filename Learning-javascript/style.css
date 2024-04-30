@@ -1,6 +1,12 @@
 .akr{
-    background: #d3a2a2;
+
     width: 50%;
     height: 50%;
     border: 2px solid;
+    color: #000000b9;
+    
+}
+
+.pak{
+    background-color: aqua;
 }
