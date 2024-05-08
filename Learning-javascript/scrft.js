@@ -383,13 +383,14 @@
 // events in js 
 let btn2 = document.querySelector("btn2")
 let btn = document.querySelector("#btn")
-btn.onclick = () =>{
+btn.onmouseover = () =>{
     console.log("btn2 was click")
     let a = 70;
     a++;
     console.log(a)
 }
 
-btn2 = onmouseover = () => {
-    console.log("you are on button")
+btn2 = onclick = (e) => {
+    console.log("you are on button",e)
+
 }
