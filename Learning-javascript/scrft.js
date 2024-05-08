@@ -250,7 +250,7 @@
 
 // arra.forEach((valp , indx , arr) => {
 //     console.log(valp, arr, indx)
-    
+
 // });
 
 // a.forEach(a => {
@@ -381,16 +381,27 @@
 
 
 // events in js 
-let btn2 = document.querySelector("btn2")
-let btn = document.querySelector("#btn")
-btn.onmouseover = () =>{
-    console.log("btn2 was click")
-    let a = 70;
-    a++;
-    console.log(a)
-}
+// let btn = document.querySelector("#btn")
+// btn.onmouseover = () => {
+//     console.log("btn2 was click")
+//     let a = 70;
+//     a++;
+//     console.log(a)
+// }
 
-btn2 = onclick = (e) => {
-    console.log("you are on button",e)
 
-}
+let mode = document.querySelector("#btn2")
+let currmod = "light";
+let body = document.querySelector("body")
+mode.addEventListener("click", (e) => {
+    if (currmod === "light") {
+        currmod = "dark"
+        body.classList.add("dark")
+        body.classList.remove("light")
+    } else {
+        currmod = "light"
+        body.classList.add("light")  
+        body.classList.remove("dark")      
+    }
+    console.log(currmod , e)
+})
