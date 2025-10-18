@@ -1,146 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-US"> <![endif]-->
+<!--[if IE 7]>   <html class="no-js lt-ie9 lt-ie8" 		  lang="en-US"> <![endif]-->
+<!--[if IE 8]>   <html class="no-js lt-ie9" 			  lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><html class="no-js" 					  lang="en-US"> <![endif]-->
 <head>
-  <meta charset="UTF-8">
-  <title>Offline Padel Scoreboard</title>
-  <style>
-    body { font-family: sans-serif; margin:0; padding:0; display:flex; height:100vh; }
-    #display, #control { flex:1; padding:20px; box-sizing:border-box; }
-    #display { background:#222; color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; font-size:4rem; }
-    #score { display:flex; gap:40px; }
-    .team { display:flex; flex-direction:column; align-items:center; }
-    .pts { font-size:6rem; }
-    #control { background:#f5f5f5; color:#000; }
-    button { font-size:1.5rem; padding:10px 20px; margin:5px; }
-    textarea { width:100%; height:120px; margin:5px 0; font-family:monospace; }
-    #connect-section { margin-bottom:20px; }
-  </style>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+	<title> Perle Conceil </title>
+	<link rel="stylesheet" href="/style.css"/>
 </head>
 <body>
-  <!-- Display mode -->
-  <div id="display" style="display:none;">
-    <div id="score">
-      <div class="team"><div>A</div><div id="scoreA" class="pts">0</div></div>
-      <div class="team"><div>B</div><div id="scoreB" class="pts">0</div></div>
-    </div>
-  </div>
+<div class="area">
+<div class="cross spin">
+<div class="cube middle explode">
+	<div class="front face shape-shift"></div>
+	<div class="back face shape-shift"></div>
+	<div class="right face shape-shift"></div>
+	<div class="left face shape-shift"></div>
+	<div class="top face shape-shift"></div>
+	<div class="bottom face shape-shift"></div>
+</div>
+<div class="cube upper explode">
+	<div class="front face shape-shift"></div>
+	<div class="back face shape-shift"></div>
+	<div class="right face shape-shift"></div>
+	<div class="left face shape-shift"></div>
+	<div class="top face shape-shift"></div>
+	<div class="bottom face shape-shift"></div>
+	</div>
+<div class="cube lower explode">
+	<div class="front face shape-shift"></div>
+	<div class="back face shape-shift"></div>
+	<div class="right face shape-shift"></div>
+	<div class="left face shape-shift"></div>
+	<div class="top face shape-shift"></div>
+	<div class="bottom face shape-shift"></div>
+</div>
+<div class="cube mid-left explode">
+	<div class="front face shape-shift"></div>
+	<div class="back face shape-shift"></div>
+	<div class="right face shape-shift"></div>
+	<div class="left face shape-shift"></div>
+	<div class="top face shape-shift"></div>
+	<div class="bottom face shape-shift"></div>
+</div>	
+<div class="cube mid-right explode">
+	<div class="front face shape-shift"></div>
+	<div class="back face shape-shift"></div>
+	<div class="right face shape-shift"></div>
+	<div class="left face shape-shift"></div>
+	<div class="top face shape-shift"></div>
+	<div class="bottom face shape-shift"></div>
+</div>
+<div class="cube mid-front explode">
+	<div class="front face shape-shift"></div>
+	<div class="back face shape-shift"></div>
+	<div class="right face shape-shift"></div>
+	<div class="left face shape-shift"></div>
+	<div class="top face shape-shift"></div>
+	<div class="bottom face shape-shift"></div>
+</div>
+<div class="cube mid-back explode">
+	<div class="front face shape-shift"></div>
+	<div class="back face shape-shift"></div>
+	<div class="right face shape-shift"></div>
+	<div class="left face shape-shift"></div>
+	<div class="top face shape-shift"></div>
+	<div class="bottom face shape-shift"></div>
+</div>
 
-  <!-- Control mode -->
-  <div id="control" style="display:none;">
-    <div id="connect-section">
-      <button id="btnMakeOffer">Create Connection →</button><br>
-      <label>Offer SDP:</label>
-      <textarea id="offerSDP" placeholder="Paste to display"></textarea>
-      <button id="btnSetOffer">Set Remote Offer &amp; Create Answer</button><br>
-      <label>Answer SDP:</label>
-      <textarea id="answerSDP" placeholder="Paste back to control"></textarea>
-      <button id="btnSetAnswer">Set Remote Answer</button>
-      <div id="status">Not connected</div>
-      <hr>
-    </div>
-    <div id="ctrl-buttons" style="display:none;">
-      <button data-team="A" data-delta="1">A +1</button>
-      <button data-team="A" data-delta="-1">A –1</button>
-      <button data-team="B" data-delta="1">B +1</button>
-      <button data-team="B" data-delta="-1">B –1</button>
-      <button id="btnReset">Reset</button>
-    </div>
-  </div>
-
-  <script>
-  (function(){
-    const params = new URLSearchParams(location.search);
-    const mode = params.get('mode') === 'display' ? 'display' : 'control';
-
-    // Elements
-    const disp = document.getElementById('display');
-    const ctrl = document.getElementById('control');
-    const scoreAel = document.getElementById('scoreA');
-    const scoreBel = document.getElementById('scoreB');
-    let scoreA = 0, scoreB = 0;
-
-    // WebRTC setup
-    let pc, dc;
-
-    function updateScoresUI() {
-      scoreAel.textContent = scoreA;
-      scoreBel.textContent = scoreB;
-    }
-
-    function applyMessage(msg) {
-      if (msg.type === 'score') {
-        scoreA = msg.a; scoreB = msg.b;
-        if (mode === 'display') updateScoresUI();
-      }
-    }
-
-    function sendScores() {
-      if (dc && dc.readyState === 'open') {
-        dc.send(JSON.stringify({ type:'score', a: scoreA, b: scoreB }));
-      }
-    }
-
-    function setupConnection(isOfferer) {
-      pc = new RTCPeerConnection({ iceServers: [] });
-      pc.onicecandidate = e => {
-        if (!e.candidate) {
-          // ICE gathering complete: show SDP
-          const full = isOfferer ? pc.localDescription : pc.localDescription;
-          document.getElementById(isOfferer?'offerSDP':'answerSDP').value = JSON.stringify(full);
-        }
-      };
-      if (isOfferer) {
-        dc = pc.createDataChannel('scores');
-        dc.onopen = () => {
-          document.getElementById('status').innerText = 'Connected';
-          document.getElementById('ctrl-buttons').style.display = 'block';
-        };
-        dc.onmessage = e => applyMessage(JSON.parse(e.data));
-        pc.createOffer().then(o=>pc.setLocalDescription(o));
-      } else {
-        pc.ondatachannel = evt => {
-          dc = evt.channel;
-          dc.onopen = () => { document.getElementById('status').innerText = 'Connected'; };
-          dc.onmessage = e => applyMessage(JSON.parse(e.data));
-        };
-      }
-    }
-
-    if (mode === 'display') {
-      disp.style.display = 'flex';
-      // Handle incoming offer
-      document.getElementById('btnSetOffer').onclick = async()=>{
-        const offer = JSON.parse(document.getElementById('offerSDP').value);
-        setupConnection(false);
-        await pc.setRemoteDescription(offer);
-        const answer = await pc.createAnswer();
-        await pc.setLocalDescription(answer);
-        // ICE gathering will fill answerSDP
-      };
-      updateScoresUI();
-    } else {
-      ctrl.style.display = 'block';
-      document.getElementById('btnMakeOffer').onclick = ()=>{
-        setupConnection(true);
-        document.getElementById('status').innerText = 'Waiting for answer…';
-      };
-      document.getElementById('btnSetAnswer').onclick = async()=>{
-        const ans = JSON.parse(document.getElementById('answerSDP').value);
-        await pc.setRemoteDescription(ans);
-      };
-      // Score controls
-      document.getElementById('ctrl-buttons').querySelectorAll('button[data-team]').forEach(btn=>{
-        btn.onclick = ()=>{
-          const t=btn.getAttribute('data-team'), d=parseInt(btn.getAttribute('data-delta'));
-          if (t==='A') scoreA=Math.max(0, scoreA+d); else scoreB=Math.max(0, scoreB+d);
-          sendScores();
-        };
-      });
-      document.getElementById('btnReset').onclick = ()=>{
-        scoreA=scoreB=0; sendScores();
-      };
-    }
-  })();
-  </script>
+</div>
+<div class="shadow"></div>	
+</div>
 </body>
 </html>
