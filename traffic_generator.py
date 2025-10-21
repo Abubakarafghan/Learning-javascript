@@ -17,5 +17,5 @@ def send_traffic(url):
         print("Stopping traffic generator...")
 
 if __name__ == "__main__":
-    target_url = "https://ealamgroup.pk"  # Replace with your website URL
+    target_url = "https://"  # Replace with your website URL
     send_traffic(target_url)
