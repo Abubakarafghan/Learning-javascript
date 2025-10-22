@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        *{
+            /* padding: 50px; */
+        }
+        .container{
+            width: 70%;
+            height: 70vh;
+            border: 4px solid;
+            
+        }
+
+        .item-1{
+            width: 20%;
+            height: 20vh;
+            border: 4px solid rgb(253, 1, 1);
+            background-color: aqua;
+        }
+          .item-2{
+            width: 20%;
+            height: 20vh;
+            border: 4px solid rgb(255, 9, 9);
+            background-color: aqua;
+        }
+          .item-3{
+            width: 20%;
+            height: 20vh;
+            border: 4px solid rgb(248, 14, 14);
+            background-color: aqua;
+        }
+          .item-4{
+            width: 20%;
+            height: 20vh;
+            border: 4px solid rgb(255, 0, 0);
+            background-color: aqua;
+        }
+
+        .container{
+               display: flex;
+            /* justify-content: center; */
+            /* justify-content: space-between; */
+            /* justify-content: space-around; */
+            /* justify-content: space-evenly; */
+            /* align-items: center ; */
+            /* flex-wrap: wrap; */
+            /* align-content: ; property works if you have add the flex-wrap: ; property? */
+            /* align-content: start; */
+            /* gap: 1rem;  */
+
+        }
+        .item-1{
+            font-size: 1.5rem;
+        }
+
+        .item-4{
+            flex-grow: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item-1">item 1</div>
+        <div class="item-2">item 2</div>
+        <div class="item-3">item 3</div>
+        <div class="item-4">item 4</div>
+    </div>
+</body>
+</html>
